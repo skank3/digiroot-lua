@@ -1,4 +1,6 @@
-local function get_digiroot(n)
+local digiroot = {}
+
+function digiroot.get_digiroot(n)
 	n = tonumber(n)
 	if type(n) ~= "number" then
 		return nil
@@ -11,9 +13,9 @@ local function get_digiroot(n)
 	end
 
 	if sum >= 10 then
-		sum = get_digiroot(sum)
+		sum = digiroot.get_digiroot(sum)
 	end
 	return sum
 end
 
-print(get_digiroot(arg[1]))
+return digiroot
